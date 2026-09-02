@@ -445,6 +445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
   Speed: 3
+  MaxSpeed: 10
+  MinSpeed: 1
   MinX: -2.8
   MaxX: 2.8
   MinY: -4.7

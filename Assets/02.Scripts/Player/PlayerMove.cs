@@ -9,6 +9,8 @@ public class PlayerMove : MonoBehaviour
     
     // 필요 필드:
     public float Speed;
+    public float MaxSpeed = 10f;
+    public float MinSpeed = 1f;
 
     public float MinX = -2.8f;
     public float MaxX = 2.8f;
@@ -31,7 +33,7 @@ public class PlayerMove : MonoBehaviour
         // 3. 방향과 속력에 따라 이동한다.
         Vector2 normalizedSpeed = (direction * Speed).normalized; // 벡터의 길이를 1로 만들어주는 것 (즉, 방향만 유지한다.)
         // 새로운 위치 = 현재 위치 + (방향 * 속력 * 시간)
-        transform.Translate(normalizedSpeed * Time.deltaTime);
+        transform.Translate(normalizedSpeed * Speed * Time.deltaTime);
         
         // 4. 플레이어 이동 영역을 제한한다. (실습과제 1)
         // float posX = Mathf.Clamp(transform.position.x, MinX, MaxX); // X 축 화면 고정
@@ -49,5 +51,21 @@ public class PlayerMove : MonoBehaviour
             pos.x = MaxX;
         }
         transform.position = pos;
+        
+        // 6. 키보드 E키를 누르면 속도 업, Q키를 누르면 속도 다운
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (Speed < MaxSpeed)
+            {
+                Speed += 0.1f;
+            }
+        }
+        else if (Input.GetKey(KeyCode.Q))
+        {
+            if (Speed > MinSpeed)
+            {
+                Speed -= 0.1f;
+            }
+        }
     }
 }
