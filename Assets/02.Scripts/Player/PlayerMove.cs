@@ -25,34 +25,13 @@ public class PlayerMove : MonoBehaviour
         
         SpeedChange();
     }
-
-    private void SpeedChange()
-    {
-        // 6. 키보드 E키를 누르면 속도 업, Q키를 누르면 속도 다운
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (Speed < MaxSpeed)
-            {
-                Speed += 0.5f;
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (Speed > MinSpeed)
-            {
-                Speed -= 0.5f;
-            }
-        }
-    }
-
+    
     private void Move()
     {
         // 1. 키보드 입력을 받는다.
         float h = Input.GetAxisRaw("Horizontal");  // 키보드 왼/오른쪽 입력 상태에 따라 -1f ~ 0 ~ 1f
         float v = Input.GetAxisRaw("Vertical");    // 키보드 위/아래 입력 상태에 따라 -1f ~ 0 ~ 1f
         
-        Debug.Log($"h: {h}, v: {v}");
- 
         // 2. 키보드 입력에 따라 방향을 구한다.
         Vector2 direction = new Vector2(h, v); // 왼쪽 방향
         
@@ -77,6 +56,25 @@ public class PlayerMove : MonoBehaviour
             pos.x = MaxPositionX;
         }
         transform.position = pos;
+    }
+    
+    private void SpeedChange()
+    {
+        // 6. 키보드 E키를 누르면 속도 업, Q키를 누르면 속도 다운
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (Speed < MaxSpeed)
+            {
+                Speed += 0.5f;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (Speed > MinSpeed)
+            {
+                Speed -= 0.5f;
+            }
+        }
     }
     
     
