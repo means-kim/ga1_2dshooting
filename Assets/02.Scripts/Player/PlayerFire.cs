@@ -9,6 +9,9 @@ public class PlayerFire : MonoBehaviour
     // - 생성 위치(총구)
     public Transform RightFirePoint;
     public Transform LeftFirePoint;
+
+    public float FireCooldown = 0.5f;
+    private float LastFireCooldown = 0f;
     
     private void Update()
     {
@@ -22,10 +25,17 @@ public class PlayerFire : MonoBehaviour
         {
             // 2. 총알 프리팹을 생성한다.
             // Instantiate는 프리팹을 복사해서 (MonoBehaviour를 상속받는)게임 오브젝트를 만들고 씬에 넣어주는 기능
-            GameObject rightBullet = Instantiate(BulletPrefab);
-            GameObject leftBullet = Instantiate(BulletPrefab);
-            rightBullet.transform.position = RightFirePoint.position;    // 생성한 총알의 위치를 나(플레이어)의 위치로
-            leftBullet.transform.position =  LeftFirePoint.position;
+
+            if (Time.time >= LastFireCooldown + FireCooldown)
+            {
+                LastFireCooldown = Time.time;
+                
+                GameObject rightBullet = Instantiate(BulletPrefab);
+                GameObject leftBullet = Instantiate(BulletPrefab);
+            
+                rightBullet.transform.position = RightFirePoint.position;    // 생성한 총알의 위치를 나(플레이어)의 위치로
+                leftBullet.transform.position =  LeftFirePoint.position;
+            }
         }
     }
 }
