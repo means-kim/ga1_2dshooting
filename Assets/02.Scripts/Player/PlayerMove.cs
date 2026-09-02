@@ -10,8 +10,8 @@ public class PlayerMove : MonoBehaviour
     // 필요 필드:
     public float Speed;
 
-    public float MinX = -2.4f;
-    public float MaxX = 2.4f;
+    public float MinX = -2.8f;
+    public float MaxX = 2.8f;
     public float MinY = -4.7f;
     public float MaxY = 0f;
     
@@ -33,10 +33,21 @@ public class PlayerMove : MonoBehaviour
         // 새로운 위치 = 현재 위치 + (방향 * 속력 * 시간)
         transform.Translate(normalizedSpeed * Time.deltaTime);
         
-        // 4. 플레이어 이동 영역을 제한한다.
-        float posX = Mathf.Clamp(transform.position.x, MinX, MaxX);
-        float posY = Mathf.Clamp(transform.position.y, MinY, MaxY);
+        // 4. 플레이어 이동 영역을 제한한다. (실습과제 1)
+        // float posX = Mathf.Clamp(transform.position.x, MinX, MaxX); // X 축 화면 고정
+        Vector2 pos = transform.position;
+        pos.y = Mathf.Clamp(pos.y, MinY, MaxY);
+        transform.position = new Vector2(pos.x, pos.y);
         
-        transform.position = new Vector2(posX, posY);
+        // 5. 화면 반대편에서 나오게 하기   (실습과제 2)
+        if (pos.x > MaxX)
+        {
+            pos.x = MinX;
+        }
+        else if (pos.x < MinX)
+        {
+            pos.x = MaxX;
+        }
+        transform.position = pos;
     }
 }
