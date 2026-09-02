@@ -15,8 +15,8 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         // 1. 키보드 입력을 받는다.
-        float h = Input.GetAxis("Horizontal");  // 키보드 왼/오른쪽 입력 상태에 따라 -1f ~ 0 ~ 1f
-        float v = Input.GetAxis("Vertical");    // 키보드 위/아래 입력 상태에 따라 -1f ~ 0 ~ 1f
+        float h = Input.GetAxisRaw("Horizontal");  // 키보드 왼/오른쪽 입력 상태에 따라 -1f ~ 0 ~ 1f
+        float v = Input.GetAxisRaw("Vertical");    // 키보드 위/아래 입력 상태에 따라 -1f ~ 0 ~ 1f
         
         Debug.Log($"h: {h}, v: {v}");
         
@@ -39,7 +39,10 @@ public class PlayerMove : MonoBehaviour
         //     // deltaTime: 이전 프레임으로부터 지금 프레임까지 시간이 얼마나 지났는지 m/s로 반환 (1000분의 1초)
         // }
         
+        // 3. 방향과 속력에 따라 이동한다.
+        Vector2 normalizedSpeed = (direction * Speed).normalized; // 벡터의 길이를 1로 만들어주는 것 (즉, 방향만 유지한다.)
+        
         // 새로운 위치 = 현재 위치 + (방향 * 속력 * 시간)
-        transform.position += (Vector3)direction * Speed * Time.deltaTime;
+        transform.position += (Vector3)(direction * normalizedSpeed * Time.deltaTime);
     }
 }
