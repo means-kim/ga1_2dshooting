@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerFire : MonoBehaviour
 {
     // 목표 : 스페이스 바를 누를 때마다 총알을 생성해서 발사하고 싶다.
     // 필요 속성
     // - 총알 프리팹
-    public GameObject BulletPrefab;
+    public GameObject MainBulletPrefab;
+    public GameObject SideBulletPrefab;
     // - 생성 위치(총구)
     public Transform RightFirePoint;
     public Transform LeftFirePoint;
@@ -34,18 +36,21 @@ public class PlayerFire : MonoBehaviour
 
     private void BulletFire()
     {
-        // 2. 총알 프리팹을 생성한다.
-        // Instantiate는 프리팹을 복사해서 (MonoBehaviour를 상속받는)게임 오브젝트를 만들고 씬에 넣어주는 기능
-
         if (Time.time >= LastFireCooldown + FireCooldown)
         {
             LastFireCooldown = Time.time;
                 
-            GameObject rightBullet = Instantiate(BulletPrefab);
-            GameObject leftBullet = Instantiate(BulletPrefab);
+            GameObject rightBullet = Instantiate(MainBulletPrefab);
+            GameObject leftBullet = Instantiate(MainBulletPrefab);
             
-            rightBullet.transform.position = RightFirePoint.position;    // 생성한 총알의 위치를 나(플레이어)의 위치로
+            GameObject rightSideBullet = Instantiate(SideBulletPrefab);
+            GameObject leftSideBullet = Instantiate(SideBulletPrefab);
+            
+            rightBullet.transform.position = RightFirePoint.position;
             leftBullet.transform.position =  LeftFirePoint.position;
+            
+            rightSideBullet.transform.position = RightFirePoint.position;
+            leftSideBullet.transform.position =  LeftFirePoint.position;
         }
     }
 

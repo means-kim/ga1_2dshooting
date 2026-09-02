@@ -528,9 +528,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d18943e6a9f02447bef12cf9580d822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerFire
-  BulletPrefab: {fileID: 1774961058515149848, guid: 3ca28ebef21ac904d8c0fe8ce1243af2, type: 3}
+  MainBulletPrefab: {fileID: 1774961058515149848, guid: 3ca28ebef21ac904d8c0fe8ce1243af2, type: 3}
+  SideBulletPrefab: {fileID: 1774961058515149848, guid: 9d91e1a905bef6d459ebb3138a241726, type: 3}
   RightFirePoint: {fileID: 284020593}
   LeftFirePoint: {fileID: 628095263}
+  FireCooldown: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
