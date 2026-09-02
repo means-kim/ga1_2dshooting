@@ -12,14 +12,40 @@ public class PlayerMove : MonoBehaviour
     public float MaxSpeed = 10f;
     public float MinSpeed = 1f;
 
-    public float MinX = -2.8f;
-    public float MaxX = 2.8f;
-    public float MinY = -4.7f;
-    public float MaxY = 0f;
+    public float MinPositionX = -2.8f;
+    public float MaxPositionX = 2.8f;
+    public float MinPositionY = -4.7f;
+    public float MaxPositionY = 0f;
     
     // 매 프레임마다 실행된다.
     // 초당 프레임 실행 횟수 : 별다른 설정이 없을 경우 가능한 많이 진행
     private void Update()
+    {
+        Move();
+        
+        SpeedChange();
+    }
+
+    private void SpeedChange()
+    {
+        // 6. 키보드 E키를 누르면 속도 업, Q키를 누르면 속도 다운
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (Speed < MaxSpeed)
+            {
+                Speed += 0.5f;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (Speed > MinSpeed)
+            {
+                Speed -= 0.5f;
+            }
+        }
+    }
+
+    private void Move()
     {
         // 1. 키보드 입력을 받는다.
         float h = Input.GetAxisRaw("Horizontal");  // 키보드 왼/오른쪽 입력 상태에 따라 -1f ~ 0 ~ 1f
@@ -38,34 +64,20 @@ public class PlayerMove : MonoBehaviour
         // 4. 플레이어 이동 영역을 제한한다. (실습과제 1)
         // float posX = Mathf.Clamp(transform.position.x, MinX, MaxX); // X 축 화면 고정
         Vector2 pos = transform.position;
-        pos.y = Mathf.Clamp(pos.y, MinY, MaxY);
+        pos.y = Mathf.Clamp(pos.y, MinPositionY, MaxPositionY);
         transform.position = new Vector2(pos.x, pos.y);
         
         // 5. 화면 반대편에서 나오게 하기   (실습과제 2)
-        if (pos.x > MaxX)
+        if (pos.x > MaxPositionX)
         {
-            pos.x = MinX;
+            pos.x = MinPositionX;
         }
-        else if (pos.x < MinX)
+        else if (pos.x < MinPositionX)
         {
-            pos.x = MaxX;
+            pos.x = MaxPositionX;
         }
         transform.position = pos;
-        
-        // 6. 키보드 E키를 누르면 속도 업, Q키를 누르면 속도 다운
-        if (Input.GetKey(KeyCode.E))
-        {
-            if (Speed < MaxSpeed)
-            {
-                Speed += 0.1f;
-            }
-        }
-        else if (Input.GetKey(KeyCode.Q))
-        {
-            if (Speed > MinSpeed)
-            {
-                Speed -= 0.1f;
-            }
-        }
     }
+    
+    
 }
