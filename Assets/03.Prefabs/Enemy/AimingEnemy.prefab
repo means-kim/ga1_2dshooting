@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4767854290111399066}
   - component: {fileID: 1208023877617941190}
-  - component: {fileID: 7869113085112561856}
   - component: {fileID: -2738796939116437278}
   - component: {fileID: -4180156619015482681}
+  - component: {fileID: -7927166859083772931}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: AimingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,24 +94,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &7869113085112561856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361948950435015300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfeeb651a05e3df4dafec7f44c514ead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  Health: 100
-  MoveSpeed: 0.5
-  EnemyPrefabs: {fileID: 1361948950435015300}
-  LeftSpawnPoint: {fileID: 0}
-  CenterSpawnPoint: {fileID: 0}
-  RightSpawnPoint: {fileID: 0}
 --- !u!61 &-2738796939116437278
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -185,3 +167,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-7927166859083772931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361948950435015300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d3a92a0320f514ab8da0ba364e201f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AimedEnemy
+  _health: 100
+  _moveSpeed: 5

@@ -14,31 +14,43 @@ public class Bullet : MonoBehaviour
         transform.Translate(direction * MoveSpeed * Time.deltaTime);
     }
 
-    // 충돌 관련 이벤트 (Enter -> Stay -> Exit)
-
-    // 충돌이 시작되면 호출되는 이벤트 함수
-    private void OnCollisionEnter2D(Collision2D collision)
+    // 트리거 관련 이벤트
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("충돌 했다!");
-
         // 나 죽고!
         Destroy(this.gameObject);
 
         // 충돌한 친구가 Enemy일때만 죽이자!
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             // GetComponent<타입>() -> 게임 오브젝트가 가지고 있는 컴포넌트 참조
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            Enemy enemy = other.gameObject.GetComponent<Enemy>();
 
-            enemy.Health -= Damage;
 
-            if (enemy.Health <= 0)
-            {
-                // 너 죽자!
-                Destroy(collision.gameObject);
-            }
+            enemy.TakeDamage(Damage);
         }
     }
+
+    // 충돌 관련 이벤트 (Enter -> Stay -> Exit)
+
+    // 충돌이 시작되면 호출되는 이벤트 함수
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     Debug.Log("충돌 했다!");
+    //
+    //     // 나 죽고!
+    //     Destroy(this.gameObject);
+    //
+    //     // 충돌한 친구가 Enemy일때만 죽이자!
+    //     if (collision.gameObject.CompareTag("Enemy"))
+    //     {
+    //         // GetComponent<타입>() -> 게임 오브젝트가 가지고 있는 컴포넌트 참조
+    //         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+    //
+    //
+    //         enemy.TakeDamage(Damage);
+    //     }
+    // }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
