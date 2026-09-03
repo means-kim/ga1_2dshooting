@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float Speed;
+    public float MoveSpeed;
 
     public GameObject EnemyPrefabs;
 
@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     {
         Vector2 direction = Vector2.down;
 
-        transform.Translate(direction * Speed * Time.deltaTime);
+        transform.Translate(direction * MoveSpeed * Time.deltaTime);
     }
 
     // private void EnemySpawn()
