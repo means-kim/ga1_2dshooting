@@ -2,12 +2,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // 목적 : 총알을 위로 움직이고 싶다.
-
     public float MoveSpeed;
 
-    public float MainBulletDamage;
-    public float SideBulletDamage;
+    public float Damage;
 
     private void Update()
     {
@@ -32,7 +29,8 @@ public class Bullet : MonoBehaviour
         {
             // GetComponent<타입>() -> 게임 오브젝트가 가지고 있는 컴포넌트 참조
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.Health -= 40;
+
+            enemy.Health -= Damage;
 
             if (enemy.Health <= 0)
             {
