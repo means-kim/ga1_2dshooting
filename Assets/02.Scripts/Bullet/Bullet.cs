@@ -6,6 +6,9 @@ public class Bullet : MonoBehaviour
 
     public float MoveSpeed;
 
+    public float MainBulletDamage;
+    public float SideBulletDamage;
+
     private void Update()
     {
         // Vector2 direction = new Vector2(1, 0);
@@ -27,8 +30,15 @@ public class Bullet : MonoBehaviour
         // 충돌한 친구가 Enemy일때만 죽이자!
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // 너 죽자!
-            Destroy(collision.gameObject);
+            // GetComponent<타입>() -> 게임 오브젝트가 가지고 있는 컴포넌트 참조
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            enemy.Health -= 40;
+
+            if (enemy.Health <= 0)
+            {
+                // 너 죽자!
+                Destroy(collision.gameObject);
+            }
         }
     }
 
