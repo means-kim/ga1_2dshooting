@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7869113085112561856}
   - component: {fileID: -2738796939116437278}
   - component: {fileID: -4180156619015482681}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfeeb651a05e3df4dafec7f44c514ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  Health: 100
   MoveSpeed: 0.5
   EnemyPrefabs: {fileID: 1361948950435015300}
   LeftSpawnPoint: {fileID: 0}

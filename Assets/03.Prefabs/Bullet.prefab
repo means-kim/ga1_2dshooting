@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7414974214181508639}
   - component: {fileID: 1038313621378727876}
   - component: {fileID: 2602455715955308584}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a04f32438209e8b4ca7bc41a535a51ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletMove
-  MoveSpeed: 6
+  MoveSpeed: 7
+  MainBulletDamage: 0
+  SideBulletDamage: 0
 --- !u!58 &1038313621378727876
 CircleCollider2D:
   m_ObjectHideFlags: 0
