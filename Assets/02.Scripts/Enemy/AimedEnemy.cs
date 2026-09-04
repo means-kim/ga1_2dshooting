@@ -11,6 +11,7 @@ public class AimedEnemy : Enemy
         if (_player == null)
         {
             Debug.Log("플레이어 태그를 가진 플레이어를 찾지 못했습니다.");
+            return;
         }
 
         // 1. 방향을 구한다. (상대방 위치 - 내 위치)

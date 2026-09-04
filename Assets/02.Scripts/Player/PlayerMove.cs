@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
 
     // 필요 필드:
     public float Speed;
+    private const float SpeedStep = 0.5f;
 
     [SerializeField] private float _health;
 
@@ -69,14 +70,14 @@ public class PlayerMove : MonoBehaviour
         {
             if (Speed < MaxSpeed)
             {
-                Speed += 0.5f;
+                Speed += SpeedStep;
             }
         }
         else if (Input.GetKeyDown(KeyCode.Q))
         {
             if (Speed > MinSpeed)
             {
-                Speed -= 0.5f;
+                Speed -= SpeedStep;
             }
         }
     }
