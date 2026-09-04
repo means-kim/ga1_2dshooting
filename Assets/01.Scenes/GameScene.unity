@@ -730,6 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
   Speed: 3
+  _health: 100
   MaxSpeed: 10
   MinSpeed: 1
   MinPositionX: -2.8

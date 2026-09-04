@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpwaner
   _spwanInterval: 3
-  _enemyPrefab: {fileID: 0}
+  _enemyPrefab: {fileID: -2104037973617479791, guid: 5e78684776973eb45b1d6f9b49fbeb0d, type: 3}

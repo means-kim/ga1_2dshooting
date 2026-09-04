@@ -8,10 +8,6 @@ public class HomingEnemy : Enemy
     private void Start()
     {
         _player = GameObject.FindWithTag("Player");
-        if (_player == null)
-        {
-            Debug.Log("플레이어 태그를 가진 플레이어를 찾지 못했습니다.");
-        }
     }
 
     protected override void Move()
@@ -22,5 +18,12 @@ public class HomingEnemy : Enemy
 
         // 2, 방향과 속도에 맞게 이동한다.
         transform.Translate(direction * _moveSpeed * Time.deltaTime);
+
+        if (_player == null)
+        {
+            Debug.Log("플레이어 태그를 가진 플레이어를 찾지 못했습니다.");
+            Destroy(gameObject);
+            return;
+        }
     }
 }

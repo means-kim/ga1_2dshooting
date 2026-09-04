@@ -4,6 +4,7 @@ public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] private float _health = 100;
     [SerializeField] protected float _moveSpeed;
+    [SerializeField] protected float _damage;
 
     protected void Update()
     {
@@ -21,4 +22,16 @@ public abstract class Enemy : MonoBehaviour
     }
 
     protected abstract void Move();
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerMove player = collision.gameObject.GetComponent<PlayerMove>();
+
+            player.PlayerTakeDamage(_damage);
+
+            Destroy(gameObject);
+        }
+    }
 }

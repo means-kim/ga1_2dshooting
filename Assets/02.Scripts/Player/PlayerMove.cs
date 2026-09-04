@@ -9,6 +9,9 @@ public class PlayerMove : MonoBehaviour
 
     // 필요 필드:
     public float Speed;
+
+    [SerializeField] private float _health;
+
     public float MaxSpeed = 10f;
     public float MinSpeed = 1f;
 
@@ -75,6 +78,15 @@ public class PlayerMove : MonoBehaviour
             {
                 Speed -= 0.5f;
             }
+        }
+    }
+
+    public void PlayerTakeDamage(float damage)
+    {
+        _health -= damage;
+        if (_health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
