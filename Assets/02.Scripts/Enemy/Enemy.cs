@@ -23,18 +23,18 @@ public abstract class Enemy : MonoBehaviour
 
     protected abstract void Move();
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerMove player = collision.gameObject.GetComponent<PlayerMove>();
-        if (player != null)
-        {
-            player.PlayerTakeDamage(_damage);
+        if (!other.CompareTag("Player")) return;
 
-            Destroy(gameObject);
-        }
-        else if (player == null)
+        Player player = other.GetComponent<Player>();
+        if (player == null)
         {
+            Debug.Log("플레이어가 null 입니다.");
             return;
         }
+
+        player.TakeDamage(_damage);
+        Destroy(gameObject);
     }
 }

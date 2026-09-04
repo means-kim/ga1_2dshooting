@@ -11,8 +11,6 @@ public class PlayerMove : MonoBehaviour
     public float Speed;
     private const float SpeedStep = 0.5f;
 
-    [SerializeField] private float _health;
-
     public float MaxSpeed = 10f;
     public float MinSpeed = 1f;
 
@@ -79,15 +77,6 @@ public class PlayerMove : MonoBehaviour
             {
                 Speed -= SpeedStep;
             }
-        }
-    }
-
-    public void PlayerTakeDamage(float damage)
-    {
-        _health -= damage;
-        if (_health <= 0)
-        {
-            Destroy(gameObject);
         }
     }
 }
