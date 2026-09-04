@@ -6,7 +6,6 @@ public class HomingEnemy : Enemy
 
     private void Start()
     {
-        _player = GameObject.FindWithTag("Player");
         if (_player == null)
         {
             Debug.Log("플레이어 태그를 가진 플레이어를 찾지 못했습니다.");
@@ -15,6 +14,8 @@ public class HomingEnemy : Enemy
 
     protected override void Move()
     {
+        _player = GameObject.FindWithTag("Player");
+
         // 1. 방향을 구한다. (상대방 위치 - 내 위치)
         Vector2 direction = _player.transform.position - transform.position;
         direction.Normalize();
