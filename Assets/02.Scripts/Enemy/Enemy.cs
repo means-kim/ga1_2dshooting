@@ -5,6 +5,9 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private float _health = 100;
     [SerializeField] protected float _moveSpeed;
     [SerializeField] protected float _damage;
+    [SerializeField] private Item[] _itemPrefabs;
+    private float _itemSpawnProbability;
+
 
     protected void Update()
     {
@@ -18,6 +21,7 @@ public abstract class Enemy : MonoBehaviour
         if (_health <= 0)
         {
             Destroy(gameObject);
+            ItemDrop();
         }
     }
 
@@ -36,5 +40,23 @@ public abstract class Enemy : MonoBehaviour
 
         player.TakeDamage(_damage);
         Destroy(gameObject);
+    }
+
+    private void ItemDrop()
+    {
+        _itemSpawnProbability = Random.Range(0.0f, 100.0f);
+
+        if (_itemSpawnProbability >=30.0f)
+        {
+            return;
+        }
+        else if (_itemSpawnProbability < 30.0f)
+        {   
+            Debug.Log("아이템 생성");
+            int itemIndex = Random.Range(0, 3);
+
+            Item item =  Instantiate(_itemPrefabs[itemIndex]);
+            item.transform.position = transform.position;
+        }
     }
 }
