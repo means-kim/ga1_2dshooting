@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class Item : MonoBehaviour
 {
     protected Vector2 _direction;
-    [SerializeField] protected float _pickupColldown = 3.0f;
+    [SerializeField] protected float _pickupCooldown = 3.0f;
     [SerializeField] protected float _moveSpeed = 5.0f;
 
     private float _currentTime = 0f;
@@ -20,7 +20,7 @@ public abstract class Item : MonoBehaviour
 
         _currentTime += Time.deltaTime;
 
-        if (_currentTime >= _pickupColldown)
+        if (_currentTime >= _pickupCooldown)
         {
             Vector2 direction = _player.transform.position - transform.position;
             direction.Normalize();
