@@ -2,12 +2,18 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour
 {
-    protected Vector2 _direction;
+    // protected Vector2 _direction;
     [SerializeField] protected float _pickupCooldown = 3.0f;
-    [SerializeField] protected float _moveSpeed = 5.0f;
+    [SerializeField] protected float _moveSpeed = 1.0f;
+    [SerializeField] private float _curveAmount = 0.3f;
 
     private float _currentTime = 0f;
     protected GameObject _player;
+    private Vector2 _p0;
+    private Vector2 _p1;
+    private Vector2 _p2;
+    private float _t;
+    private bool _isBezierStarted;
 
     private void Start()
     {
@@ -22,10 +28,11 @@ public abstract class Item : MonoBehaviour
 
         if (_currentTime >= _pickupCooldown)
         {
-            Vector2 direction = _player.transform.position - transform.position;
-            direction.Normalize();
-
-            transform.Translate(direction * _moveSpeed * Time.deltaTime);
+            // Vector2 direction = _player.transform.position - transform.position;
+            // direction.Normalize();
+            //
+            // transform.Translate(direction * _moveSpeed * Time.deltaTime);
+            BezierMove();
         }
     }
 
@@ -38,5 +45,27 @@ public abstract class Item : MonoBehaviour
             Pickup();
             Destroy(gameObject);
         }
+    }
+
+    private void BezierMove()
+    {
+        if (!_isBezierStarted)
+        {
+            _p0 = transform.position;
+            _p2 = _player.transform.position;
+            _p1 = (_p0 + _p2) / 2.0f + Vector2.right * _curveAmount;
+            _isBezierStarted = true;
+        }
+        _p2 = _player.transform.position;
+        
+        _t += Time.deltaTime *_moveSpeed;
+        _t = Mathf.Clamp01(_t);
+        
+        Vector2 start = Vector2.Lerp(_p0, _p1, _t);
+        Vector2 end = Vector2.Lerp(_p1, _p2, _t);
+        
+        Vector2 position = Vector2.Lerp(start, end, _t);
+        
+        transform.position = position;
     }
 }

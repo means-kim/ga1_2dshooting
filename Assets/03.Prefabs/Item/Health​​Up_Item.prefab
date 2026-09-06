@@ -170,4 +170,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthUpItem
   _pickupCooldown: 3
-  _moveSpeed: 5
+  _moveSpeed: 1
+  _curveAmount: 0.3
