@@ -5,6 +5,7 @@ root = true
 
 #### 들여쓰기 / 중괄호 ####
 
+end_of_line = crlf
 indent_style = space
 indent_size = 4
 csharp_new_line_before_open_brace = all
