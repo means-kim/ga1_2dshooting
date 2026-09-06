@@ -20,8 +20,8 @@ public abstract class Enemy : MonoBehaviour
 
         if (_health <= 0)
         {
-            Destroy(gameObject);
             ItemDrop();
+            Destroy(gameObject);
         }
     }
 
@@ -53,7 +53,7 @@ public abstract class Enemy : MonoBehaviour
         else if (_itemSpawnProbability < 30.0f)
         {   
             Debug.Log("아이템 생성");
-            int itemIndex = Random.Range(0, 3);
+            int itemIndex = Random.Range(0, _itemPrefabs.Length);
 
             Item item =  Instantiate(_itemPrefabs[itemIndex]);
             item.transform.position = transform.position;

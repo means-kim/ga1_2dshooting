@@ -7,6 +7,12 @@ public class HealthUpItem : Item
     protected override void Pickup()
     {
         Player player = _player.GetComponent<Player>();
+        
+        if (player == null)
+        {
+            return;
+        }
+        
         player.Heal(HealthUp);
     }
 }
