@@ -13,6 +13,6 @@ public class MoveSpeedUpItem : Item
             return;
         }
 
-        player.Speed += MoveSpeedItem;
+        player.MoveSpeedUp(MoveSpeedItem);
     }
 }
