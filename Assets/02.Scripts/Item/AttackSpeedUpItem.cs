@@ -3,7 +3,6 @@ using UnityEngine;
 public class AttackSpeedUpItem : Item
 {
     private const float CooldownMinus = 0.1f;
-    private float _minCooldown = 0.1f;
 
     protected override void Pickup()
     {
@@ -13,9 +12,7 @@ public class AttackSpeedUpItem : Item
         {
             return;
         }
-        
-        float maxCooldown = Mathf.Max(player.FireCooldown - CooldownMinus, _minCooldown);
-        
-        player.FireCooldown = maxCooldown;
+
+        player.Cooldown(CooldownMinus);
     }
 }

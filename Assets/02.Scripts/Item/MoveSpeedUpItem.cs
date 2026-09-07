@@ -7,12 +7,12 @@ public class MoveSpeedUpItem : Item
     protected override void Pickup()
     {
         PlayerMove player = _player.GetComponent<PlayerMove>();
-        
+
         if (player == null)
         {
             return;
         }
-        
+
         player.Speed += MoveSpeedItem;
     }
 }

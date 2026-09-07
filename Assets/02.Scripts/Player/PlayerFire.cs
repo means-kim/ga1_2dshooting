@@ -15,6 +15,7 @@ public class PlayerFire : MonoBehaviour
     public Transform LeftFirePoint;
 
     public float FireCooldown = 0.5f;
+    private float _minCooldown = 0.1f;
     private float _lastFireCooldown = 0f;
 
     private bool _isNumber1KeyPressed = false;
@@ -67,5 +68,15 @@ public class PlayerFire : MonoBehaviour
     private void AutoBulletFire()
     {
         BulletFire();
+    }
+
+    public void Cooldown(float cooldown)
+    {
+        FireCooldown -= cooldown;
+
+        if (FireCooldown < _minCooldown)
+        {
+            FireCooldown = _minCooldown;
+        }
     }
 }

@@ -46,16 +46,16 @@ public abstract class Enemy : MonoBehaviour
     {
         _itemSpawnProbability = Random.Range(0.0f, 100.0f);
 
-        if (_itemSpawnProbability >=30.0f)
+        if (_itemSpawnProbability >= 30.0f)
         {
             return;
         }
         else if (_itemSpawnProbability < 30.0f)
-        {   
+        {
             Debug.Log("아이템 생성");
             int itemIndex = Random.Range(0, _itemPrefabs.Length);
 
-            Item item =  Instantiate(_itemPrefabs[itemIndex]);
+            Item item = Instantiate(_itemPrefabs[itemIndex]);
             item.transform.position = transform.position;
         }
     }

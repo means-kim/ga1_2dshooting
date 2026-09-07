@@ -57,15 +57,15 @@ public abstract class Item : MonoBehaviour
             _isBezierStarted = true;
         }
         _p2 = _player.transform.position;
-        
-        _t += Time.deltaTime *_moveSpeed;
+
+        _t += Time.deltaTime * _moveSpeed;
         _t = Mathf.Clamp01(_t);
-        
+
         Vector2 start = Vector2.Lerp(_p0, _p1, _t);
         Vector2 end = Vector2.Lerp(_p1, _p2, _t);
-        
+
         Vector2 position = Vector2.Lerp(start, end, _t);
-        
+
         transform.position = position;
     }
 }
