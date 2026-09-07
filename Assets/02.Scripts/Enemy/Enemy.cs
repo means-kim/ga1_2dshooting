@@ -8,6 +8,12 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private Item[] _itemPrefabs;
     private float _itemSpawnProbability;
 
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     protected void Update()
     {
@@ -17,6 +23,8 @@ public abstract class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         _health -= damage;
+
+        _animator.SetTrigger("Hit");
 
         if (_health <= 0)
         {

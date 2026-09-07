@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -2738796939116437278}
   - component: {fileID: -4180156619015482681}
   - component: {fileID: 5355292963964893401}
+  - component: {fileID: 7411046342012922191}
   m_Layer: 8
   m_Name: HomingEnemy
   m_TagString: Enemy
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 4.12, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -186,3 +187,25 @@ MonoBehaviour:
   - {fileID: 3072399806364407882, guid: d2fd3920a23724d9c9b553549c720268, type: 3}
   - {fileID: 8860880858249892054, guid: 8db17a328fe5749948bfd40be0e5b6df, type: 3}
   - {fileID: 6749350532112338713, guid: 04c4dc5e5f3054ddfa8a670708050b38, type: 3}
+--- !u!95 &7411046342012922191
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361948950435015300}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35923b6c1872df343a60cf4a195330f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
