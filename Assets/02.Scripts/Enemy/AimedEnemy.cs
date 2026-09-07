@@ -17,6 +17,10 @@ public class AimedEnemy : Enemy
         // 1. 방향을 구한다. (상대방 위치 - 내 위치)
         _direction = _player.transform.position - transform.position;
         _direction.Normalize();
+        
+        float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+        
+        transform.rotation = Quaternion.Euler(0f, 0f, angle + 90f );
     }
 
     protected override void Move()
