@@ -47,7 +47,7 @@ public abstract class Enemy : MonoBehaviour
         }
 
         player.TakeDamage(_damage);
-        Destroy(gameObject);
+        // Destroy(gameObject);
     }
 
     private void ItemDrop()
