@@ -44,6 +44,9 @@ public abstract class Enemy : MonoBehaviour
 
     private void ItemDrop()
     {
+        // Todo: Scriptable Object를 사용해서 구현
+        if (_itemPrefabs == null || _itemPrefabs.Length == 0) return;
+
         _itemSpawnProbability = Random.Range(0.0f, 100.0f);
 
         if (_itemSpawnProbability >= 30.0f)
