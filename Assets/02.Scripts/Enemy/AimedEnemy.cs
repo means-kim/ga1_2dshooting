@@ -4,6 +4,7 @@ public class AimedEnemy : Enemy
 {
     private GameObject _player;
     private Vector2 _direction;
+    private const float rotationOffset = 90.0f;
 
     private void Start()
     {
@@ -20,7 +21,7 @@ public class AimedEnemy : Enemy
         
         float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
         
-        transform.rotation = Quaternion.Euler(0f, 0f, angle + 90f );
+        transform.rotation = Quaternion.Euler(0f, 0f, angle + rotationOffset);
     }
 
     protected override void Move()
