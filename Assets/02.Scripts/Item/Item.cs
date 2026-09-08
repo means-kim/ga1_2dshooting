@@ -6,6 +6,7 @@ public abstract class Item : MonoBehaviour
     [SerializeField] protected float _pickupCooldown = 3.0f;
     [SerializeField] protected float _moveSpeed = 1.0f;
     [SerializeField] private float _curveAmount = 0.3f;
+    [SerializeField] private GameObject _pickupItemEffect;
 
     private float _currentTime = 0f;
     protected GameObject _player;
@@ -43,6 +44,7 @@ public abstract class Item : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Pickup();
+            SpawnPickupEffect();
             Destroy(gameObject);
         }
     }
@@ -56,6 +58,7 @@ public abstract class Item : MonoBehaviour
             _p1 = (_p0 + _p2) / 2.0f + Vector2.right * _curveAmount;
             _isBezierStarted = true;
         }
+
         _p2 = _player.transform.position;
 
         _t += Time.deltaTime * _moveSpeed;
@@ -67,5 +70,10 @@ public abstract class Item : MonoBehaviour
         Vector2 position = Vector2.Lerp(start, end, _t);
 
         transform.position = position;
+    }
+
+    private void SpawnPickupEffect()
+    {
+        Instantiate(_pickupItemEffect, transform.position, Quaternion.identity);
     }
 }
