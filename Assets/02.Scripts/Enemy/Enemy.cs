@@ -10,6 +10,9 @@ public abstract class Enemy : MonoBehaviour
 
     private Animator _animator;
 
+    // - 죽을 때 생성할 이펙트 프리팹
+    [SerializeField] private GameObject _deathEffectPrefab;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -29,6 +32,9 @@ public abstract class Enemy : MonoBehaviour
         if (_health <= 0)
         {
             ItemDrop();
+
+            SpawnDeathEffect();
+
             Destroy(gameObject);
         }
     }
@@ -69,5 +75,10 @@ public abstract class Enemy : MonoBehaviour
             Item item = Instantiate(_itemPrefabs[itemIndex]);
             item.transform.position = transform.position;
         }
+    }
+
+    private void SpawnDeathEffect()
+    {
+        Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
     }
 }
