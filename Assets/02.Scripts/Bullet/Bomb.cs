@@ -30,6 +30,9 @@ public class Bomb : MonoBehaviour
 
     public void PlayBombAnimation()
     {
-        _animator.SetTrigger("Fire");
+        if (_animator != null)
+        {
+            _animator.SetTrigger("Fire");
+        }
     }
 }
