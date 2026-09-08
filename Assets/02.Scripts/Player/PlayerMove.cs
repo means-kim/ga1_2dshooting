@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
 
     // 필요 필드:
     private Animator _animator;
+    private TrailRenderer _trailRenderer;
 
     [SerializeField] private float _speed;
     private const float SpeedStep = 0.5f;
@@ -27,6 +28,7 @@ public class PlayerMove : MonoBehaviour
     {
         // 애니메이터 컴포넌트에 대한 참조를 가져와서 할당한다.
         _animator = GetComponent<Animator>();
+        _trailRenderer = GetComponent<TrailRenderer>();
     }
 
     // 매 프레임마다 실행된다.
@@ -70,10 +72,12 @@ public class PlayerMove : MonoBehaviour
         if (pos.x > MaxPositionX)
         {
             pos.x = MinPositionX;
+            _trailRenderer.Clear();
         }
         else if (pos.x < MinPositionX)
         {
             pos.x = MaxPositionX;
+            _trailRenderer.Clear();
         }
 
         transform.position = pos;
