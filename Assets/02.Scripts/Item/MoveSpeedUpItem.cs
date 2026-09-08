@@ -13,6 +13,7 @@ public class MoveSpeedUpItem : Item
             return;
         }
 
+        Debug.Log($"플레이어 이동 속도: {player.SppedStep}");
         player.MoveSpeedUp(MoveSpeedItem);
     }
 }

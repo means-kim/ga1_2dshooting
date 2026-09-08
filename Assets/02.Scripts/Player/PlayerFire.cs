@@ -20,6 +20,8 @@ public class PlayerFire : MonoBehaviour
 
     private bool _isNumber1KeyPressed = false;
 
+    public float CooldownFire => FireCooldown;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))

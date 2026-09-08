@@ -4,7 +4,7 @@ public class AimedEnemy : Enemy
 {
     private GameObject _player;
     private Vector2 _direction;
-    private const float rotationOffset = 90.0f;
+    private const float RotationOffset = 90.0f;
 
     private void Start()
     {
@@ -18,10 +18,10 @@ public class AimedEnemy : Enemy
         // 1. 방향을 구한다. (상대방 위치 - 내 위치)
         _direction = _player.transform.position - transform.position;
         _direction.Normalize();
-        
+
         float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
-        
-        transform.rotation = Quaternion.Euler(0f, 0f, angle + rotationOffset);
+
+        transform.rotation = Quaternion.Euler(0f, 0f, angle + RotationOffset);
     }
 
     protected override void Move()

@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] private float _speed;
     private const float SpeedStep = 0.5f;
+    public float SppedStep => SpeedStep;
 
     public float MaxSpeed = 10f;
     public float MinSpeed = 1f;
@@ -36,6 +37,11 @@ public class PlayerMove : MonoBehaviour
 
         SpeedChange();
     }
+
+    // public float GetSpeed()
+    // {
+    //     return _speed;
+    // }
 
     private void Move()
     {

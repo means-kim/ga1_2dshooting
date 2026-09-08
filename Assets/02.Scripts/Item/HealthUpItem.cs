@@ -13,6 +13,7 @@ public class HealthUpItem : Item
             return;
         }
 
+        Debug.Log($"플레이어 체력 : {player.Health}");
         player.Heal(HealthUp);
     }
 }

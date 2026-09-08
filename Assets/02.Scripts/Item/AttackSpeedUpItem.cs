@@ -13,6 +13,7 @@ public class AttackSpeedUpItem : Item
             return;
         }
 
+        Debug.Log($"쿨타임 : {player.CooldownFire}");
         player.Cooldown(CooldownMinus);
     }
 }
