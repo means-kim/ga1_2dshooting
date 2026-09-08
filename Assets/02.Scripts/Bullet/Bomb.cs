@@ -1,9 +1,15 @@
+using System;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 3f;
-    // [SerializeField] private float _damage;
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -20,5 +26,10 @@ public class Bomb : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+    }
+
+    public void PlayBombAnimation()
+    {
+        _animator.SetTrigger("Fire");
     }
 }

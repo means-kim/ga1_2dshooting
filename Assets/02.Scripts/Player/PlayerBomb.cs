@@ -29,6 +29,8 @@ public class PlayerBomb : MonoBehaviour
 
         Debug.Log($"폭탄 생성");
         GameObject bomb = Instantiate(_bombPrefab);
+        Bomb missile = bomb.GetComponent<Bomb>();
+        missile.PlayBombAnimation();
 
         bomb.transform.position = _bombFirePoint.position;
 
