@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float _health = 100;
     [SerializeField] private GameObject _deathEffectPrefab;
 
+    private AudioSource _playerHitAudioSource;
+
     public float Health => _health; // 람다식 문법을 활용한 읽기 전용 프로퍼티
 
     // public float Health
@@ -26,9 +28,15 @@ public class Player : MonoBehaviour
     //     return _health;
     // }
 
+    private void Awake()
+    {
+        _playerHitAudioSource = GetComponent<AudioSource>();
+    }
+
     public void TakeDamage(float damage)
     {
         _health -= damage;
+        _playerHitAudioSource.Play();
         if (_health <= 0)
         {
             SpawnDeathEffect();
