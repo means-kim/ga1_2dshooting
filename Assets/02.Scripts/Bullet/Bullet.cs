@@ -6,6 +6,15 @@ public class Bullet : MonoBehaviour
 
     public float Damage;
 
+    private AudioSource _audioSource;
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.pitch = UnityEngine.Random.Range(1.0f, 1.5f);
+        _audioSource.Play();
+    }
+
     private void Update()
     {
         // Vector2 direction = new Vector2(1, 0);
