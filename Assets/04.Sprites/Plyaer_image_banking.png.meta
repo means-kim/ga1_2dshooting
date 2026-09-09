@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: c8cd07d534996504fba7e688b91995a1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1246461863181586846
+    second: Plyaer_image_banking_0
+  - first:
+      213: -3834524127994543017
+    second: Plyaer_image_banking_1
+  - first:
+      213: 5021935452209585601
+    second: Plyaer_image_banking_2
+  - first:
+      213: 2110011242700925750
+    second: Plyaer_image_banking_3
+  - first:
+      213: 6270424289126043972
+    second: Plyaer_image_banking_4
+  - first:
+      213: -4743998974075711271
+    second: Plyaer_image_banking_5
+  - first:
+      213: 4933410219564636456
+    second: Plyaer_image_banking_6
+  - first:
+      213: -6056471563134207819
+    second: Plyaer_image_banking_7
+  - first:
+      213: 7948253854596022892
+    second: Plyaer_image_banking_8
+  - first:
+      213: 8581721345470161393
+    second: Plyaer_image_banking_9
+  - first:
+      213: -1619143851547851188
+    second: Plyaer_image_banking_10
+  - first:
+      213: -8317875773998475626
+    second: Plyaer_image_banking_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 236
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Plyaer_image_banking_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 751
+        width: 277
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26e6dfa1a8da3bee0800000000000000
+      internalID: -1246461863181586846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plyaer_image_banking_1
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 742
+        width: 276
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 754883c2f9809cac0800000000000000
+      internalID: -3834524127994543017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plyaer_image_banking_2
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 751
+        width: 276
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cd94e9bfaf71b540800000000000000
+      internalID: 5021935452209585601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plyaer_image_banking_3
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 742
+        width: 276
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63be441cb04484d10800000000000000
+      internalID: 2110011242700925750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plyaer_image_banking_4
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 421
+        width: 278
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441d6583ba5050750800000000000000
+      internalID: 6270424289126043972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plyaer_image_banking_5
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 421
+        width: 279
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0566f511ee92eb0800000000000000
+      internalID: -4743998974075711271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plyaer_image_banking_6
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 430
+        width: 279
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8299e64d47ef67440800000000000000
+      internalID: 4933410219564636456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plyaer_image_banking_7
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 429
+        width: 278
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8712fa33713fba0800000000000000
+      internalID: -6056471563134207819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plyaer_image_banking_8
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 100
+        width: 280
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6243d3e4cedd4e60800000000000000
+      internalID: 7948253854596022892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plyaer_image_banking_9
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 109
+        width: 280
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f1e2268816681770800000000000000
+      internalID: 8581721345470161393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plyaer_image_banking_10
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 100
+        width: 280
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c468b30ee35a789e0800000000000000
+      internalID: -1619143851547851188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plyaer_image_banking_11
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 109
+        width: 280
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6965ef4bd08f09c80800000000000000
+      internalID: -8317875773998475626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 23f00a7d3bd1dda41bcffda0b25661fe
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Plyaer_image_banking_0: -1246461863181586846
+      Plyaer_image_banking_1: -3834524127994543017
+      Plyaer_image_banking_10: -1619143851547851188
+      Plyaer_image_banking_11: -8317875773998475626
+      Plyaer_image_banking_2: 5021935452209585601
+      Plyaer_image_banking_3: 2110011242700925750
+      Plyaer_image_banking_4: 6270424289126043972
+      Plyaer_image_banking_5: -4743998974075711271
+      Plyaer_image_banking_6: 4933410219564636456
+      Plyaer_image_banking_7: -6056471563134207819
+      Plyaer_image_banking_8: 7948253854596022892
+      Plyaer_image_banking_9: 8581721345470161393
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
