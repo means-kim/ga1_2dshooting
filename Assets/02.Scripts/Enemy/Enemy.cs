@@ -74,6 +74,7 @@ public abstract class Enemy : MonoBehaviour
 
             Item item = Instantiate(_itemPrefabs[itemIndex]);
             item.transform.position = transform.position;
+            item.PlayItemAnimation();
         }
     }
 

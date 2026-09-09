@@ -15,6 +15,12 @@ public abstract class Item : MonoBehaviour
     private Vector2 _p2;
     private float _t;
     private bool _isBezierStarted;
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     private void Start()
     {
@@ -75,5 +81,10 @@ public abstract class Item : MonoBehaviour
     private void SpawnPickupEffect()
     {
         Instantiate(_pickupItemEffect, transform.position, Quaternion.identity);
+    }
+
+    public void PlayItemAnimation()
+    {
+        _animator.SetTrigger("IsCreate");
     }
 }
