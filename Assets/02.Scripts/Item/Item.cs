@@ -16,10 +16,12 @@ public abstract class Item : MonoBehaviour
     private float _t;
     private bool _isBezierStarted;
     private Animator _animator;
+    // private AudioSource _pickupAudioSource;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        // _pickupAudioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -50,6 +52,7 @@ public abstract class Item : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Pickup();
+            // _pickupAudioSource.Play();
             SpawnPickupEffect();
             Destroy(gameObject);
         }

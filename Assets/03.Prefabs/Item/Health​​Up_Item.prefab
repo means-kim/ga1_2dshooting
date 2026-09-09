@@ -173,7 +173,7 @@ MonoBehaviour:
   _pickupCooldown: 3
   _moveSpeed: 1
   _curveAmount: 0.3
-  _pickupItemEffect: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0, type: 3}
+  _pickupItemEffect: {fileID: 2708598583397607911, guid: 6398d43fe79ea0140913dc5530c646af, type: 3}
 --- !u!95 &8011782136137591195
 Animator:
   serializedVersion: 7
