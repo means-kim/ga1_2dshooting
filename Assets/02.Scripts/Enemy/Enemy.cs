@@ -29,10 +29,10 @@ public abstract class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        _damagedAudioSource.Play();
         _health -= damage;
 
         _animator.SetTrigger("Hit");
-        _damagedAudioSource.Play();
 
         if (_health <= 0)
         {
