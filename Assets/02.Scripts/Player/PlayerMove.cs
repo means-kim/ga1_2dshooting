@@ -23,6 +23,10 @@ public class PlayerMove : MonoBehaviour
     public float MinPositionY = -4.7f;
     public float MaxPositionY = 0f;
 
+    // private GameObject[] _enemies;
+    // private GameObject _nearestEnemy;
+    // private float _nearestDistance;
+
     // 객체가 생성될 때 한 번 실행된다.
     private void Awake()
     {
@@ -36,6 +40,9 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         Move();
+
+        // FindEnemies();
+        // AutoMove();
 
         SpeedChange();
     }
@@ -115,4 +122,42 @@ public class PlayerMove : MonoBehaviour
             _speed = MinSpeed;
         }
     }
+
+    // private void FindEnemies()
+    // {
+    //     _enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    //     _nearestEnemy = null;
+    //     _nearestDistance = Mathf.Infinity;
+    //
+    //     foreach (GameObject enemy in _enemies)
+    //     {
+    //         float distance = Vector2.Distance(transform.position, enemy.transform.position);
+    //
+    //         if (distance < _nearestDistance)
+    //         {
+    //             _nearestDistance = distance;
+    //             _nearestEnemy = enemy;
+    //         }
+    //     }
+    // }
+    //
+    // private void AutoMove()
+    // {
+    //     if (_nearestEnemy == null) return;
+    //     Vector2 centerPosition = new Vector2(0f, -3f);
+    //
+    //     Vector2 direction = (_nearestEnemy.transform.position - transform.position).normalized;
+    //
+    //     if (direction.magnitude <= 1f)
+    //     {
+    //         return;
+    //     }
+    //
+    //     if (transform.position.y > 1)
+    //     {
+    //         transform.position += (Vector3)(centerPosition * _speed * Time.deltaTime);
+    //     }
+    //
+    //     transform.position += (Vector3)(direction * _speed * Time.deltaTime);
+    // }
 }
