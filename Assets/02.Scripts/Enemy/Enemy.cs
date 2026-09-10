@@ -40,8 +40,11 @@ public abstract class Enemy : MonoBehaviour
 
             SpawnDeathEffect();
 
-            ScoreManager scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
-            scoreManager.AddScore(100);
+            // 싱글톤 패턴
+            // 1. 전역적으로 누구를 뜻하는지 안다.    => 적역으로 접근 가능
+            // 2. 그 누구가 한명 인것을 안다.        => 인스턴스(생성된 객체)가 하나임을 보장한다.
+
+            ScoreManager.Instance.AddScore(100);
 
             Destroy(gameObject);
         }
