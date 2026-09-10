@@ -40,6 +40,9 @@ public abstract class Enemy : MonoBehaviour
 
             SpawnDeathEffect();
 
+            ScoreManager scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
+            scoreManager.AddScore(100);
+
             Destroy(gameObject);
         }
     }
