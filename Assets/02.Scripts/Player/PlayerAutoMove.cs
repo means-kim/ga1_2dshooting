@@ -4,14 +4,26 @@ public class PlayerAutoMove : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
+    private GameObject _target = null;
 
     private void Update()
+    {
+        if (_target == null)
+        {
+            FindNearestTarget();
+        }
+
+        Move();
+    }
+
+
+    private void FindNearestTarget()
     {
         // 1. 타겟을 구한다.
         GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
         if (targets.Length == 0) return;
 
-        GameObject target = targets[0];
+        _target = targets[0];
         float minDistance = float.MaxValue;
         // 1-1. 가장 가까운 타겟을 찾는다.
         foreach (GameObject enemy in targets)
@@ -22,12 +34,17 @@ public class PlayerAutoMove : MonoBehaviour
             {
                 // 타겟 변경
                 minDistance = distance;
-                target = enemy;
+                _target = enemy;
             }
         }
+    }
+
+    private void Move()
+    {
+        if (_target == null) return;
 
         // 2. 방향을 구한다.
-        Vector3 direction = target.transform.position - transform.position;
+        Vector3 direction = _target.transform.position - transform.position;
         direction.Normalize();
         direction.y = 0;
 
