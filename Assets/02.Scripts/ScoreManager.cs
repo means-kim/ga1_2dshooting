@@ -14,7 +14,8 @@ public class ScoreManager : MonoBehaviour
     // 관리: 특정 데이터에 대한 무결성과 생성, 읽기, 수정, 삭제 등과 관련된 게임 로직
 
     private int _bestScore;
-    private int _crrentScore;
+    private int _crrentScore = 0;
+    private int _lastRefreshScore = -1;
 
     // UI 책임 추가 (TMP 참조)
     [SerializeField] private TextMeshProUGUI _bestScoreTextUI;
@@ -50,7 +51,11 @@ public class ScoreManager : MonoBehaviour
 
     private void Refresh()
     {
+        if (_lastRefreshScore == _crrentScore) return;
+
         _bestScoreTextUI.text = $"BestScore: {_bestScore}";
         _crrentScoreTextUI.text = $"Score: {_crrentScore}";
+
+        _lastRefreshScore = _crrentScore;
     }
 }
