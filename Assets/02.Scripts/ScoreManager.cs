@@ -16,6 +16,9 @@ public class ScoreManager : MonoBehaviour
     private int _bestScore;
     private int _crrentScore;
 
+    // 저장키
+    private const string SaveKey = "BestScore";
+
     // UI 책임 추가 (TMP 참조)
     [SerializeField] private TextMeshProUGUI _bestScoreTextUI;
     [SerializeField] private TextMeshProUGUI _crrentScoreTextUI;
@@ -34,6 +37,14 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+        // 입력 : Input
+        // 저장/불러오기: PlayerPrefs
+        if (PlayerPrefs.HasKey(SaveKey))
+        {
+            _bestScore = PlayerPrefs.GetInt(SaveKey);
+        }
+        // _bestScore = PlayerPrefs.GetInt(SaveKey, 0);
+
         Refresh();
     }
 
@@ -45,6 +56,11 @@ public class ScoreManager : MonoBehaviour
         if (_crrentScore > _bestScore)
         {
             _bestScore = _crrentScore;
+
+            // 저장: PlayerPrefs.Set~ 시리즈를 이용해서 int/float/string을 저장 가능하다.
+            // 내 컴퓨터 어딘가에 저장이 된다..
+            PlayerPrefs.SetInt(SaveKey, _bestScore);
+            PlayerPrefs.Save(); // 명시적으로 저장을 해주자 (의도치 않게 종료되면 저장이 안되기 때문)
         }
 
         Refresh();
