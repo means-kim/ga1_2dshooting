@@ -4,9 +4,12 @@ public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] private float _health = 100;
     [SerializeField] protected float _moveSpeed;
+
     [SerializeField] protected float _damage;
-    [SerializeField] private Item[] _itemPrefabs;
-    private float _itemSpawnProbability;
+
+    // [SerializeField] private Item[] _itemPrefabs;
+    [SerializeField] private int _itemSpawnProbability = 30;
+    private int _itemRandomSpawnProbability;
 
     private Animator _animator;
 
@@ -15,6 +18,8 @@ public abstract class Enemy : MonoBehaviour
 
     // - 죽을 때 생성할 이펙트 프리팹
     [SerializeField] private GameObject _deathEffectPrefab;
+
+    [SerializeField] private ItemSpawnDataTableSO _itemSpawnDataTable;
 
     private void Awake()
     {
@@ -70,23 +75,54 @@ public abstract class Enemy : MonoBehaviour
     private void ItemDrop()
     {
         // Todo: Scriptable Object를 사용해서 구현
-        if (_itemPrefabs == null || _itemPrefabs.Length == 0) return;
 
-        _itemSpawnProbability = Random.Range(0.0f, 100.0f);
+        _itemRandomSpawnProbability = Random.Range(0, 100);
 
-        if (_itemSpawnProbability >= 30.0f)
+        if (_itemRandomSpawnProbability < _itemSpawnProbability)
         {
-            return;
-        }
-        else if (_itemSpawnProbability < 30.0f)
-        {
-            Debug.Log("아이템 생성");
-            int itemIndex = Random.Range(0, _itemPrefabs.Length);
+            // 1. 전체 가중치를 더한다.
+            int totalWeight = 0;
+            foreach (ItemSpawnData data in _itemSpawnDataTable.Datas)
+            {
+                totalWeight += data.Weight;
+            }
 
-            Item item = Instantiate(_itemPrefabs[itemIndex]);
-            item.transform.position = transform.position;
-            item.PlayItemAnimation();
+            // 2. 전체 가중치에서 랜덤 가중치를 뽑는다.
+            int randomWeight = Random.Range(0, totalWeight);
+
+            // 3. 가중치를 누적하면서 구간 찾기
+            int cumulativeWeight = 0;
+            foreach (ItemSpawnData data in _itemSpawnDataTable.Datas)
+            {
+                cumulativeWeight += data.Weight;
+                if (cumulativeWeight > randomWeight)
+                {
+                    GameObject item = Instantiate(data.itemPrefab);
+                    item.transform.position = transform.position;
+                    Item itemComponent = item.GetComponent<Item>();
+                    itemComponent.PlayItemAnimation();
+                    break;
+                }
+            }
         }
+
+        // if (_itemPrefabs == null || _itemPrefabs.Length == 0) return;
+        //
+        // _itemSpawnProbability = Random.Range(0.0f, 100.0f);
+        //
+        // if (_itemSpawnProbability >= 30.0f)
+        // {
+        //     return;
+        // }
+        // else if (_itemSpawnProbability < 30.0f)
+        // {
+        //     Debug.Log("아이템 생성");
+        //     int itemIndex = Random.Range(0, _itemPrefabs.Length);
+        //
+        //     Item item = Instantiate(_itemPrefabs[itemIndex]);
+        //     item.transform.position = transform.position;
+        //     item.PlayItemAnimation();
+        // }
     }
 
     private void SpawnDeathEffect()
