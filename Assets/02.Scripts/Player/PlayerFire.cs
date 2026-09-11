@@ -45,17 +45,21 @@ public class PlayerFire : MonoBehaviour
         {
             _lastFireCooldown = Time.time;
 
-            GameObject rightBullet = Instantiate(MainBulletPrefab);
-            GameObject leftBullet = Instantiate(MainBulletPrefab);
+            // Todo: 총알 창고야 총알 내놔라
 
-            GameObject rightSideBullet = Instantiate(SideBulletPrefab);
-            GameObject leftSideBullet = Instantiate(SideBulletPrefab);
+            // GameObject rightBullet = Instantiate(MainBulletPrefab);
+            // GameObject leftBullet = Instantiate(MainBulletPrefab);
+            Bullet rightBullet = BulletPool.Instance.GetBullet();
+            Bullet leftBullet = BulletPool.Instance.GetBullet();
+
+            // GameObject rightSideBullet = Instantiate(SideBulletPrefab);
+            // GameObject leftSideBullet = Instantiate(SideBulletPrefab);
 
             rightBullet.transform.position = RightFirePoint.position;
             leftBullet.transform.position = LeftFirePoint.position;
 
-            rightSideBullet.transform.position = RightFirePoint.position;
-            leftSideBullet.transform.position = LeftFirePoint.position;
+            // rightSideBullet.transform.position = RightFirePoint.position;
+            // leftSideBullet.transform.position = LeftFirePoint.position;
         }
     }
 

@@ -5,6 +5,12 @@ public class DestroyZone : MonoBehaviour
     // 나와 충돌하 다른 게임 오브젝트는 누구든 파괴해버리겠다.
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.tag == "Bullet")
+        {
+            other.gameObject.SetActive(false);
+            return;
+        }
+
         Destroy(other.gameObject);
     }
 }
