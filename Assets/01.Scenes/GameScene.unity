@@ -331,6 +331,10 @@ PrefabInstance:
       propertyPath: _enemyPrefab
       value: 
       objectReference: {fileID: -2104037973617479791, guid: 5e78684776973eb45b1d6f9b49fbeb0d, type: 3}
+    - target: {fileID: 7101877920543513428, guid: 4dccf28fe437a2c438bffe880f404538, type: 3}
+      propertyPath: _spawnDatas.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2395,6 +2399,34 @@ PrefabInstance:
       propertyPath: _enemyPrefab
       value: 
       objectReference: {fileID: -7927166859083772931, guid: c720adaa34ab1fb4190a38e2b6156808, type: 3}
+    - target: {fileID: 7101877920543513428, guid: 4dccf28fe437a2c438bffe880f404538, type: 3}
+      propertyPath: _spawnDatas.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101877920543513428, guid: 4dccf28fe437a2c438bffe880f404538, type: 3}
+      propertyPath: _spawnDatas.Array.data[0].Percent
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101877920543513428, guid: 4dccf28fe437a2c438bffe880f404538, type: 3}
+      propertyPath: _spawnDatas.Array.data[1].Percent
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101877920543513428, guid: 4dccf28fe437a2c438bffe880f404538, type: 3}
+      propertyPath: _spawnDatas.Array.data[2].Percent
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101877920543513428, guid: 4dccf28fe437a2c438bffe880f404538, type: 3}
+      propertyPath: _spawnDatas.Array.data[0].EnemyPrefab
+      value: 
+      objectReference: {fileID: 1361948950435015300, guid: 5e78684776973eb45b1d6f9b49fbeb0d, type: 3}
+    - target: {fileID: 7101877920543513428, guid: 4dccf28fe437a2c438bffe880f404538, type: 3}
+      propertyPath: _spawnDatas.Array.data[1].EnemyPrefab
+      value: 
+      objectReference: {fileID: 1361948950435015300, guid: c720adaa34ab1fb4190a38e2b6156808, type: 3}
+    - target: {fileID: 7101877920543513428, guid: 4dccf28fe437a2c438bffe880f404538, type: 3}
+      propertyPath: _spawnDatas.Array.data[2].EnemyPrefab
+      value: 
+      objectReference: {fileID: 1361948950435015300, guid: 08a8481326c3a9d4e989a1080cbfe025, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
