@@ -38,7 +38,7 @@ public class ItemPool : MonoBehaviour
         }
     }
 
-    private Item GetItem(ItemType itemType)
+    public Item GetItem(ItemType itemType)
     {
         for (int i = 0; i < _itemPrefabs.Length; i++)
         {

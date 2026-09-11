@@ -97,7 +97,8 @@ public abstract class Enemy : MonoBehaviour
                 cumulativeWeight += data.Weight;
                 if (cumulativeWeight > randomWeight)
                 {
-                    GameObject item = Instantiate(data.itemPrefab);
+                    // GameObject item = Instantiate(data.itemPrefab);
+                    Item item = ItemPool.Instance.GetItem(data.Type);
                     item.transform.position = transform.position;
                     Item itemComponent = item.GetComponent<Item>();
                     itemComponent.PlayItemAnimation();

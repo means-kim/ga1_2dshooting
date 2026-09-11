@@ -27,6 +27,13 @@ public abstract class Item : MonoBehaviour
         // _pickupAudioSource = GetComponent<AudioSource>();
     }
 
+    private void OnEnable()
+    {
+        _currentTime = 0f;
+        _isBezierStarted = false;
+        _t = 0f;
+    }
+
     private void Start()
     {
         _player = GameObject.FindWithTag("Player");
@@ -57,7 +64,8 @@ public abstract class Item : MonoBehaviour
             Pickup();
             // _pickupAudioSource.Play();
             SpawnPickupEffect();
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

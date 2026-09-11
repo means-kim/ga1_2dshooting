@@ -3,6 +3,6 @@ using UnityEngine;
 [System.Serializable]
 public class ItemSpawnData
 {
-    public GameObject itemPrefab;
+    public ItemType Type;
     public int Weight;
 }
