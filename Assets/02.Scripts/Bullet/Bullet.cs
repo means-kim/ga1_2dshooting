@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     public float Damage;
 
     private AudioSource _audioSource;
+    [SerializeField] BulletType _type;
+    public BulletType Type => _type;
 
     private void Awake()
     {
