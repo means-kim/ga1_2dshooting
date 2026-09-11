@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ItemSpawnDataTableSO
   m_EditorClassIdentifier: Assembly-CSharp::ItemSpawnDataTableSO
   Datas:
-  - itemPrefab: {fileID: 6120329788867211375, guid: d2fd3920a23724d9c9b553549c720268, type: 3}
+  - Type: 0
     Weight: 30
-  - itemPrefab: {fileID: 4235593689391170397, guid: 8db17a328fe5749948bfd40be0e5b6df, type: 3}
+  - Type: 1
     Weight: 30
-  - itemPrefab: {fileID: 3003885648250759523, guid: 04c4dc5e5f3054ddfa8a670708050b38, type: 3}
+  - Type: 2
     Weight: 30

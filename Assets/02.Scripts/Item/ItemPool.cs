@@ -42,7 +42,7 @@ public class ItemPool : MonoBehaviour
     {
         for (int i = 0; i < _itemPrefabs.Length; i++)
         {
-            if (itemType == null)
+            if (_itemPrefabs[i].Type != itemType)
             {
                 continue;
             }
