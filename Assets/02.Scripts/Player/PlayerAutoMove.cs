@@ -7,6 +7,13 @@ public class PlayerAutoMove : MonoBehaviour
     private GameObject _target = null;
     [SerializeField] private float _stopTrackingY = -2;
 
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     private void Update()
     {
         if (_target == null || _target.transform.position.y < _stopTrackingY)
@@ -16,7 +23,6 @@ public class PlayerAutoMove : MonoBehaviour
 
         Move();
     }
-
 
     private void FindNearestTarget()
     {
@@ -52,6 +58,8 @@ public class PlayerAutoMove : MonoBehaviour
         // 2. 방향을 구한다.
         Vector3 diff = _target.transform.position - transform.position;
         Vector3 direction = diff;
+
+        _animator.SetInteger("x", (int)direction.x);
 
         // 3. 적과 나와의 y축 차이가 3보다 크면 앞으로 가고 아니라면 뒤로가게
         if (diff.y >= 3)
