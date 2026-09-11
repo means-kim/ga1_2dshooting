@@ -18,6 +18,9 @@ public abstract class Item : MonoBehaviour
     private Animator _animator;
     // private AudioSource _pickupAudioSource;
 
+    [SerializeField] private ItemType _type;
+    public ItemType Type => _type;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
