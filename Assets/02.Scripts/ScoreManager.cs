@@ -16,6 +16,8 @@ public class ScoreManager : MonoBehaviour
     private int _bestScore;
     private int _crrentScore;
 
+    public int Score => _crrentScore;
+
     // 저장키
     private const string SaveKey = "BestScore";
 
@@ -70,5 +72,11 @@ public class ScoreManager : MonoBehaviour
     {
         _bestScoreTextUI.text = $"BestScore: {_bestScore:N0}";
         _crrentScoreTextUI.text = $"Score: {_crrentScore:N0}";
+    }
+
+    public void SpendScore(int amount)
+    {
+        _crrentScore -= amount;
+        Refresh();
     }
 }

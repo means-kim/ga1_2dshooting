@@ -32,6 +32,14 @@ public class UpgradeManager : MonoBehaviour
     // UI 갱신
     public void LevelUp(int index)
     {
+        // 점수 매니저에게 점수가 있는지 물어보고 점수가 있다면 차감 후 업그레이드 호출
+
+        Upgrade upgrade = _upgrades[index];
+
+        if (ScoreManager.Instance.Score <= upgrade.Cost) return;
+
+        ScoreManager.Instance.SpendScore(upgrade.Cost);
+
         _upgrades[index].LevelUp();
 
         RefreshUI();
