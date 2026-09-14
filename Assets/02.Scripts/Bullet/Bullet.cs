@@ -50,8 +50,8 @@ public class Bullet : MonoBehaviour
             // GetComponent<타입>() -> 게임 오브젝트가 가지고 있는 컴포넌트 참조
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
 
-
-            enemy.TakeDamage(Damage);
+            float finalDamage = Damage + (float)UpgradeManager.Instance.Upgrades[0].CurrentValue;
+            enemy.TakeDamage(finalDamage);
         }
     }
 

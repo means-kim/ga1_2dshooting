@@ -59,15 +59,17 @@ public class PlayerMove : MonoBehaviour
         float v = Input.GetAxisRaw("Vertical"); // 키보드 위/아래 입력 상태에 따라 -1f ~ 0 ~ 1f
 
         // 2. 키보드 입력에 따라 방향을 구한다.
-        Vector2 direction = new Vector2(h, v); // 왼쪽 방향
+        Vector2 normalizedDirection = new Vector2(h, v).normalized; // 왼쪽 방향
 
 
-        _animator.SetInteger("x", (int)direction.x);
+        _animator.SetInteger("x", (int)normalizedDirection.x);
 
         // 3. 방향과 속력에 따라 이동한다.
-        Vector2 normalizedSpeed = (direction * _speed).normalized; // 벡터의 길이를 1로 만들어주는 것 (즉, 방향만 유지한다.)
+        // Vector2 normalizedSpeed = (direction * _speed).normalized; // 벡터의 길이를 1로 만들어주는 것 (즉, 방향만 유지한다.)
         // 새로운 위치 = 현재 위치 + (방향 * 속력 * 시간)
-        transform.Translate(normalizedSpeed * _speed * Time.deltaTime);
+        // transform.Translate(normalizedSpeed * _speed * Time.deltaTime);
+        float finalSpeed = _speed + UpgradeManager.Instance.Upgrades[2].CurrentValue;
+        Vector2 newPosition = transform.position + (Vector3)normalizedDirection * finalSpeed * Time.deltaTime;
 
         // 4. 플레이어 이동 영역을 제한한다. (실습과제 1)
         // float posX = Mathf.Clamp(transform.position.x, MinX, MaxX); // X 축 화면 고정

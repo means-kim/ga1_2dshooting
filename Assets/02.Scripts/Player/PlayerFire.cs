@@ -85,7 +85,11 @@ public class PlayerFire : MonoBehaviour
 
     public void Cooldown(float cooldown)
     {
-        FireCooldown -= cooldown;
+        // FireCooldown -= cooldown;
+        float finalFireRate =
+            cooldown - UpgradeManager.Instance.Upgrades[1].CurrentValue;
+
+        FireCooldown = finalFireRate;
 
         if (FireCooldown < _minCooldown)
         {
