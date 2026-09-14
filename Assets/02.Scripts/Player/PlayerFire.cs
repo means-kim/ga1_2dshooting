@@ -22,6 +22,13 @@ public class PlayerFire : MonoBehaviour
 
     public float CooldownFire => FireCooldown;
 
+    public bool _autoFireMode = false;
+
+    public void SetAuto(bool auto)
+    {
+        _autoFireMode = auto;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
