@@ -13,6 +13,11 @@ public class UpgradeManager : MonoBehaviour
     // 업그레이드 UI들
     [SerializeField] private UI_Upgrade[] _uiUpgrades;
 
+    private void Start()
+    {
+        RefreshUI();
+    }
+
     private void Awake()
     {
         if (_instance != null)

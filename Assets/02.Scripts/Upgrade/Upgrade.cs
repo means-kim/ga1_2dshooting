@@ -45,7 +45,7 @@ public class Upgrade
         // Value : 기본 밸류 + 레벨 + 증가량 밸류
         // Cost  : 기본 점수 * 증가량 점수 ^ 레벨
 
-        _currentValue = _defaultValue * _level * _increaseValue;
+        _currentValue = _defaultValue + _level * _increaseValue;
         _nextValue = _defaultValue + (_level + 1) * _increaseValue;
         _cost = (int)(_defaultCost + Mathf.Pow(_increaseCost, _level));
     }
