@@ -19,6 +19,7 @@ public class EnemySpawner : MonoBehaviour
     private float _spawnProbability;
 
     [SerializeField] private EnemySpawnDataTableSO _spawnDataTable;
+    [SerializeField] private EnemyBalanceDataTableSO _balanceDataTable;
 
     // - 생설할 프리팹
     // [SerializeField] private Enemy[] _enemyPrefab;
@@ -70,6 +71,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 GameObject enemy = Instantiate(data.EnemyPrefab);
                 enemy.transform.position = transform.position;
+                enemy.GetComponent<Enemy>().SetHealthBalance(GetHealthMultiplier());
                 break;
             }
         }
@@ -89,5 +91,33 @@ public class EnemySpawner : MonoBehaviour
         //     Enemy enemy = Instantiate(_enemyPrefab[(int)EnemyType.Normal]);
         //     enemy.transform.position = transform.position;
         // }
+    }
+
+    private float GetHealthMultiplier()
+    {
+        // Todo: BestScore에 따라 밸런스 데이터의 multi 뭐시기 반환
+        int bestscore = ScoreManager.Instance.BestScore;
+
+        foreach (EnemyBalanceData data in _balanceDataTable.Datas)
+        {
+            if (bestscore < data.RequireScore)
+            {
+                return data.HealthMultiplier;
+            }
+        }
+
+        // 없다면 제일 마지막 값 반환
+        int lastIndex = _balanceDataTable.Datas.Length - 1;
+        return _balanceDataTable.Datas[lastIndex].HealthMultiplier;
+
+        // float multiplier = 0f;
+        // foreach (EnemyBalanceData data in _balanceDataTable.Datas)
+        // {
+        //     if (ScoreManager.Instance.BestScore >= data.RequireScore)
+        //     {
+        //         multiplier = data.HealthMultiplier;
+        //     }
+        // }
+        // return multiplier;
     }
 }
