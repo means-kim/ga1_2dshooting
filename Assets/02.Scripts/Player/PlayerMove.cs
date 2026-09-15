@@ -73,9 +73,9 @@ public class PlayerMove : MonoBehaviour
 
         // 4. 플레이어 이동 영역을 제한한다. (실습과제 1)
         // float posX = Mathf.Clamp(transform.position.x, MinX, MaxX); // X 축 화면 고정
-        Vector2 pos = transform.position;
+        Vector2 pos = newPosition;
         pos.y = Mathf.Clamp(pos.y, MinPositionY, MaxPositionY);
-        transform.position = new Vector2(pos.x, pos.y);
+        // transform.position = new Vector2(pos.x, pos.y);
 
         // 5. 화면 반대편에서 나오게 하기   (실습과제 2)
         if (pos.x > MaxPositionX)

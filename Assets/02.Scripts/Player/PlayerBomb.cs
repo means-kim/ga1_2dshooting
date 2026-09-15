@@ -17,7 +17,8 @@ public class PlayerBomb : MonoBehaviour
     {
         _currentTime += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.B))
+        // if (SimpleInput.GetKeyDown(KeyCode.B))
+        if (SimpleInput.GetButton("Bomb"))
         {
             BombFire();
         }
