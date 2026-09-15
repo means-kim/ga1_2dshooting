@@ -36,13 +36,13 @@ public class PlayerFire : MonoBehaviour
             _isNumber1KeyPressed = !_isNumber1KeyPressed;
         }
 
-        if (!_isNumber1KeyPressed)
-        {
-            SpaceBulletFire();
-        }
-        else if (_isNumber1KeyPressed)
+        if (_autoFireMode)
         {
             AutoBulletFire();
+        }
+        else
+        {
+            SpaceBulletFire();
         }
     }
 
