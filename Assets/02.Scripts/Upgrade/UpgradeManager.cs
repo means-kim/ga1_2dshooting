@@ -15,6 +15,8 @@ public class UpgradeManager : MonoBehaviour
 
     private void Start()
     {
+        Load();
+
         RefreshUI();
     }
 
@@ -32,6 +34,7 @@ public class UpgradeManager : MonoBehaviour
     // UI 갱신
     public void LevelUp(int index)
     {
+        // Todo: 묻지말고 시켜라! (아래를 시키는 메서드 생성)
         // 점수 매니저에게 점수가 있는지 물어보고 점수가 있다면 차감 후 업그레이드 호출
 
         Upgrade upgrade = _upgrades[index];
@@ -42,6 +45,8 @@ public class UpgradeManager : MonoBehaviour
 
         _upgrades[index].LevelUp();
 
+        Save();
+
         RefreshUI();
     }
 
@@ -50,6 +55,27 @@ public class UpgradeManager : MonoBehaviour
         foreach (UI_Upgrade uiUpgrade in _uiUpgrades)
         {
             uiUpgrade.Refresh();
+        }
+    }
+
+    private void Save()
+    {
+        // 데이터 저장은 유의미한 정보만 저장을 한다.
+        // 여기서는 레벨만 저장하면 나머지는 역산이 가능하다.
+        for (int i = 0; i < _upgrades.Length; i++)
+        {
+            PlayerPrefs.SetInt($"Upgrade.{i}.Level", _upgrades[i].Level);
+        }
+
+        PlayerPrefs.Save();
+    }
+
+    private void Load()
+    {
+        for (int i = 0; i < _upgrades.Length; i++)
+        {
+            int level = PlayerPrefs.GetInt($"Upgrade.{i}.Level", 1);
+            _upgrades[i].SetLevel(level);
         }
     }
 }
