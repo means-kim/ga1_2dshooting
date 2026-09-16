@@ -1706,7 +1706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1206005349077091292, guid: 604499f167a8df44dacbe18b662d090e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64e3ffcbec2714c4985c18f6a011ccd0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1736,8 +1736,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e152dbef231eee449946f050d9f6cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_AutoButton
-  _onSprite: {fileID: 1206005349077091292, guid: 604499f167a8df44dacbe18b662d090e, type: 3}
-  _offSprite: {fileID: 2475711161320758719, guid: 43dd38eb68b35794489403bc92a8090d, type: 3}
+  _onSprite: {fileID: 21300000, guid: 64e3ffcbec2714c4985c18f6a011ccd0, type: 3}
+  _offSprite: {fileID: 21300000, guid: eec8a666933ee2548a457854f7274dd1, type: 3}
 --- !u!82 &734744638
 AudioSource:
   m_ObjectHideFlags: 0

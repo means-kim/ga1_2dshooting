@@ -1,0 +1,41 @@
+{
+    "asset": "eec8a666933ee2548a457854f7274dd1",
+    "fileName": "01a0a7e7-63c6-7adf-80fd-30cce4063ad9.png",
+    "prompt": "A pixel art UI button for an AUTO MODE toggle, inactive state. Retro 16-bit arcade shooter style. Compact circular mechanical control button. Dark gray and deep navy metallic frame with a desaturated dark blue/gray inner surface. Minimal glow, looks powered off. Strong dark pixel outlines, small pixel highlights for depth. Centered, transparent background, square 1:1 canvas. No text. Matching the style of the provided reference image.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "43dd38eb68b35794489403bc92a8090d",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}
